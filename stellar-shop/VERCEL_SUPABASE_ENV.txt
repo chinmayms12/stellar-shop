@@ -1,0 +1,20 @@
+Vercel Production Environment Variables
+
+VITE_SUPABASE_URL=https://lykoxkuxwhbwgvyyraqy.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_RaQIld0mkSTzNGFg2FLrEQ_UkQmoeOH
+VITE_SUPABASE_ANON_KEY=sb_publishable_RaQIld0mkSTzNGFg2FLrEQ_UkQmoeOH
+VITE_SITE_URL=https://stellar-shop-sigma.vercel.app
+VITE_ENABLE_GOOGLE_OAUTH=false
+VITE_ENABLE_TURNSTILE=false
+VITE_USE_SUPABASE_PROXY=true
+
+IMPORTANT:
+- Set these in Vercel for Production (and Preview if you want preview deployments to authenticate).
+- Redeploy after changing them because Vite embeds VITE_* variables at build time.
+- In Supabase Authentication > URL Configuration, set Site URL to:
+  https://stellar-shop-sigma.vercel.app
+- Add this redirect URL if email/OAuth redirects are used:
+  https://stellar-shop-sigma.vercel.app/**
+- In Authentication > Providers > Email, enable Email provider.
+- If immediate signup/login is required, turn Confirm email OFF.
+- Do not put a Supabase secret/service_role key in any VITE_* variable.
